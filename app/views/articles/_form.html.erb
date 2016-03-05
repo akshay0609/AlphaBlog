@@ -7,18 +7,35 @@
     </ul>
 <%end%>
 
-<%= form_for @article do |article| %>
-    <p>
-      <%=article.label :title%><br>
-      <%=article.text_field :title%>
-    </p>
-    <p>
-      <%=article.label :description%><br>
-      <%=article.text_area :description%>
-    </p>
-    <%= article.submit %>
-<%end%>
 
-<p>
-  <%= link_to 'Back to articles', articles_path%>
-</p>
+<div class='row'>
+  <div class="clo-xs=12">
+    <%= form_for(@article, :html => {class: "form-horizontal",role: "form"}) do |article| %>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+              <%=article.label :title%><br>
+          </div>
+          <div class="col-sm-8">
+            <%=article.text_field :title, class: "form-control", placeholder: "Title of articel", autofocus: true%>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%=article.label :description%><br>
+            </div>
+          <div class="col-sm-8">
+            <%=article.text_area :description, rows: 10, class: "form-control", placeholder: "Description of articel"%>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <%= article.submit class: "btn btn-default" %>
+          </div>
+        </div>  
+    <%end%>
+  </div>
+</div>
+
+<div class="col-xs-4 col-xs-offset-4">
+  [ <%= link_to 'Cancel request and return to articles listing', articles_path%> ]
+</div>
