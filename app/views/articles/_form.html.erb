@@ -1,0 +1,24 @@
+<% if @article.errors.any? %>
+    <h2>The following errors prevented the article form getting created</h2>
+    <ul>
+      <% @article.errors.full_messages.each do |error_message|%>
+          <li><%=error_message%></li>
+      <%end%>
+    </ul>
+<%end%>
+
+<%= form_for @article do |article| %>
+    <p>
+      <%=article.label :title%><br>
+      <%=article.text_field :title%>
+    </p>
+    <p>
+      <%=article.label :description%><br>
+      <%=article.text_area :description%>
+    </p>
+    <%= article.submit %>
+<%end%>
+
+<p>
+  <%= link_to 'Back to articles', articles_path%>
+</p>
