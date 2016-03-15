@@ -7,7 +7,6 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 
-gem 'rdoc-data'
 gem 'tzinfo-data'
 # Use sqlite3 as the database for Active Record
 
