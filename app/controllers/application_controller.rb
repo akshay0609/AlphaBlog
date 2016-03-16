@@ -6,16 +6,16 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :log_in?
   
   def current_user
-    session[:user_id] if session[:user_id]
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
   
   def log_in?
     !!current_user
   end
   
-  def requred_user
-    if log_in?
-      flash[:danger] = "You must be logged to perform that acrion"
+  def require_user
+    if !log_in?
+      flash[:danger] = "You must be logged to perform that action"
       redirect_to root_path
     end
   end
