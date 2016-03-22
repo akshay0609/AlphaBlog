@@ -1,6 +1,6 @@
 $navbar-default-bg: #000;
 
-@import "bootstrap-mincer";
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
 #logo {
@@ -12,7 +12,7 @@ $navbar-default-bg: #000;
   font-weight: bold;
 }
 
-@logo.hover {
+#logo.hover {
   color: #fff;
 }
 
