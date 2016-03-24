@@ -18,7 +18,7 @@ class CategoriesControllerTest < ActionController::TestCase
     
     test "should get show" do
         get(:show, {'id' => @category.id})
-        assert_repsonse :success
+        assert_response :success
     end
     
 end
