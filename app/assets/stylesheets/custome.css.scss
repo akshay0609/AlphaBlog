@@ -59,6 +59,13 @@ $navbar-default-bg: #000;
   font-size: 1.5em;
 }
 
+.badge {
+  text-transform: uppercase;
+  background-color: #eaeaea;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
 .article-body {
   border-top: 1px solid #eaeaea;
   padding-top: 15px;
